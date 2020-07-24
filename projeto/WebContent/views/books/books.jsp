@@ -24,35 +24,49 @@
 								<td>10</td>
 								<td>Bootstrap 4</td>
 								<td>Natan Souza</td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+                				<td><a class="nav-link"
+								href=" <c:url value='/views/books/book.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-eye fa-lg"></i></a></td>
+	       			           <td><a class="nav-link"
+								href=" <c:url value='/views/books/edit.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+									class="fa fa-pencil fa-lg"></i></a></td>
 							</tr>
 							<tr>
 								<td>2</td>
 								<td>42</td>
 								<td>Algoritmos em Java</td>
 								<td>Guilherme Silveira</td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+                				<td><a class="nav-link"
+								href=" <c:url value='/views/books/book.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-eye fa-lg"></i></a></td>
+	       			           <td><a class="nav-link"
+								href=" <c:url value='/views/books/edit.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+									class="fa fa-pencil fa-lg"></i></a></td>
 							</tr>
 							<tr>
 								<td>3</td>
 								<td>127</td>
 								<td>Spring MVC</td>
 								<td>Alberto Souza</td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<a href="#" class="btn btn-primary"><i class="fa fa-book fa-1"></i> Nova Livro</a>
+                				<td><a class="nav-link"
+								href=" <c:url value='/views/books/book.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-eye fa-lg"></i></a></td>
+	       			           <td><a class="nav-link"
+								href=" <c:url value='/views/books/edit.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+									class="fa fa-pencil fa-lg"></i></a></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	          <a href=" <c:url value='/views/books/form.jsp' />"
+				class="btn btn-primary"><i class="fa fa-book fa-1"></i> Novo livro</a>
+				
 			</div>
     </jsp:body>
 </cdc:template>

@@ -22,33 +22,46 @@
 								<td>1</td>
 								<td>10</td>
 								<td>Front-end</td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+								<td><a class="nav-link"
+								href=" <c:url value='/views/categories/category.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-eye fa-lg"></i></a></td>
+								<td><a class="nav-link"
+								href=" <c:url value='/views/categories/edit.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-pencil fa-lg"></i></a></td>
 							</tr>
 							<tr>
 								<td>2</td>
 								<td>42</td>
 								<td>Infraestrutura</td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+								<td><a class="nav-link"
+								href=" <c:url value='/views/categories/category.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-eye fa-lg"></i></a></td>
+								<td><a class="nav-link"
+								href=" <c:url value='/views/categories/edit.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-pencil fa-lg"></i></a></td>
 							</tr>
 							<tr>
 								<td>3</td>
 								<td>127</td>
 								<td>Mobile</td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link" href="#" data-toggle="tooltip"
-								title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<a href="#" class="btn btn-primary"><i class="fa fa-list fa-1"></i> Nova Categoria</a>
+								<td><a class="nav-link"
+								href=" <c:url value='/views/categories/category.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-eye fa-lg"></i></a></td>
+								<td><a class="nav-link"
+								href=" <c:url value='/views/categories/edit.jsp' />"
+								data-toggle="tooltip" title="Editar"><i
+								class="fa fa-pencil fa-lg"></i></a></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	          <a href=" <c:url value='/views/categories/form.jsp' />"
+				class="btn btn-primary"><i class="fa fa-list fa-1"></i> Nova categoria</a>
 			</div>
     </jsp:body>
 </cdc:template>
