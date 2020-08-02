@@ -5,7 +5,7 @@
 				class="fa fa-home fa-lg"></i> Home</a></li>
 		<li class="nav-item"><a class="nav-link"
 			href="./authors/authors.jsp"><i class="fa fa-user fa-lg"></i>
-				Autores</a></li>
+				Autores xxx</a></li>
 		<li class="nav-item"><a class="nav-link"
 			href="./categories/categories.jsp"><i class="fa fa-list fa-lg"></i>
 				Categorias</a></li>

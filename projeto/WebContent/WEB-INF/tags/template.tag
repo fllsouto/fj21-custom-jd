@@ -1,5 +1,6 @@
 <%@ tag language="java" description="Overall Page template" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags/" prefix="cdc" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,45 +35,25 @@
 		</nav>
 		<div class="container-fluid" id="main">
 			<div class="row row-offcanvas row-offcanvas-left">
-	
-				<div class="col-md-3 col-lg-2 sidebar-offcanvas bg-light pl-0"
-					id="sidebar" role="navigation">
-					<ul class="nav flex-column sticky-top pl-0 pt-5 mt-3">
-						
-						<li class="nav-item">
-							<a class="nav-link" href=" <c:url value='/views/home.jsp' /> ">
-								<i class="fa fa-home fa-lg"></i> Home
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href=" <c:url value='/views/authors/authors.jsp' /> ">
-								<i class="fa fa-user fa-lg"></i> Autores
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href=" <c:url value='/views/categories/categories.jsp' />">
-								<i class="fa fa-list fa-lg"></i> Categorias
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href=" <c:url value='/views/books/books.jsp' />">
-								<i class="fa fa-book fa-lg"></i> Livros
-							</a>
-						</li>
-						
-					</ul>
-				</div>
-				<jsp:doBody/>
+		
+				<cdc:sidebar />
+				<jsp:doBody />
 				
 				<!--/col-->
-	
-			</div>
+			</div>	
 		</div>
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script

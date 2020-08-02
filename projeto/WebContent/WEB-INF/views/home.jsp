@@ -38,7 +38,7 @@ pageEncoding="UTF-8" %>
 										<i class="fa fa-book fa-4x"></i>
 									</div>
 									<h6 class="text-uppercase">Livros</h6>
-									<h1 class="display-4">42</h1>
+									<h1 class="display-4">42</h1> <!-- ARRUMAR ISSO -->
 								</div>
 							</div>
 						</div>
