@@ -24,7 +24,6 @@ public class AuthorController {
 
 	@RequestMapping("/authors/form")
 	public ModelAndView form() {
-		System.out.println("Retornando o formulário");
 		ModelAndView mv = new ModelAndView("authors/form");
 		return mv;
 	}

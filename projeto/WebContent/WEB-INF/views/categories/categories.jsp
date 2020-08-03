@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags/" prefix="cdc"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -13,54 +11,24 @@
 							<tr>
 								<th>#</th>
 								<th>ID</th>
-								<th>Nome</th>
-								<th colspan="2">AÃ§Ãµes</th>
+								<th>Título</th>
+								<th colspan="2">Ações</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>10</td>
-								<td>Front-end</td>
-								<td><a class="nav-link"
-								href=" <c:url value='/views/categories/category.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link"
-								href=" <c:url value='/views/categories/edit.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-pencil fa-lg"></i></a></td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>42</td>
-								<td>Infraestrutura</td>
-								<td><a class="nav-link"
-								href=" <c:url value='/views/categories/category.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link"
-								href=" <c:url value='/views/categories/edit.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-pencil fa-lg"></i></a></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>127</td>
-								<td>Mobile</td>
-								<td><a class="nav-link"
-								href=" <c:url value='/views/categories/category.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-eye fa-lg"></i></a></td>
-								<td><a class="nav-link"
-								href=" <c:url value='/views/categories/edit.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-pencil fa-lg"></i></a></td>
-	                </tr>
+		              	<c:forEach var="category" items="${ categories }" varStatus="loop">
+			              	<tr>
+			                  <td>${ loop.index + 1 }</td>
+			                  <td>${ category.id }</td>
+			                  <td>${ category.title }</td>
+			                  <td><a class="nav-link" href=" <c:url value='/categories/${ category.id }' />" data-toggle="tooltip" title="Visualizar"><i class="fa fa-eye fa-lg"></i></a></td>
+			                  <td><a class="nav-link" href=" <c:url value='/categories/${ category.id }/edit' />" data-toggle="tooltip" title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+			                </tr>
+	              		</c:forEach>
 	              </tbody>
 	            </table>
 	          </div>
-	          <a href=" <c:url value='/views/categories/form.jsp' />"
+	          <a href=" <c:url value='/categories/form' />"
 				class="btn btn-primary"><i class="fa fa-list fa-1"></i> Nova categoria</a>
 			</div>
     </jsp:body>
