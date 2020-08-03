@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags/" prefix="cdc"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -13,60 +11,31 @@
 							<tr>
 								<th>#</th>
 								<th>ID</th>
-								<th>TÃ­tulo</th>
+								<th>Título</th>
 								<th>Autor</th>
-								<th colspan="2">AÃ§Ãµes</th>
+								<th>Categoria</th>
+								<th colspan="2">Ações</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>10</td>
-								<td>Bootstrap 4</td>
-								<td>Natan Souza</td>
-                				<td><a class="nav-link"
-								href=" <c:url value='/views/books/book.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-eye fa-lg"></i></a></td>
-	       			           <td><a class="nav-link"
-								href=" <c:url value='/views/books/edit.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-									class="fa fa-pencil fa-lg"></i></a></td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>42</td>
-								<td>Algoritmos em Java</td>
-								<td>Guilherme Silveira</td>
-                				<td><a class="nav-link"
-								href=" <c:url value='/views/books/book.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-eye fa-lg"></i></a></td>
-	       			           <td><a class="nav-link"
-								href=" <c:url value='/views/books/edit.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-									class="fa fa-pencil fa-lg"></i></a></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>127</td>
-								<td>Spring MVC</td>
-								<td>Alberto Souza</td>
-                				<td><a class="nav-link"
-								href=" <c:url value='/views/books/book.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-								class="fa fa-eye fa-lg"></i></a></td>
-	       			           <td><a class="nav-link"
-								href=" <c:url value='/views/books/edit.jsp' />"
-								data-toggle="tooltip" title="Editar"><i
-									class="fa fa-pencil fa-lg"></i></a></td>
-	                </tr>
+							<c:forEach var="book" items="${ books }" varStatus="loop">
+								<tr>
+									<td>${ loop.index + 1 }</td>
+									<td>${ book.id }</td>
+									<td>${ book.title }</td>
+									<td>${ book.authorName }</td>
+									<td>${ book.categoryTitle }</td>
+									<td><a class="nav-link" href=" <c:url value='/books/${ book.id }' />" data-toggle="tooltip"
+											title="Visualizar"><i class="fa fa-eye fa-lg"></i></a></td>
+									<td><a class="nav-link" href=" <c:url value='/books/${ book.id }/edit' />" data-toggle="tooltip"
+											title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+								</tr>
+							</c:forEach>
 	              </tbody>
 	            </table>
 	          </div>
-	          <a href=" <c:url value='/views/books/form.jsp' />"
+	          <a href="<c:url value='/books/form' />"
 				class="btn btn-primary"><i class="fa fa-book fa-1"></i> Novo livro</a>
-				
 			</div>
     </jsp:body>
 </cdc:template>

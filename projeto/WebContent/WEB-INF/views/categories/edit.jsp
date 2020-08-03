@@ -6,8 +6,8 @@
     <jsp:body>
  		<div class="col main pt-5 mt-3">
 	        <h2 class="display-4 d-none d-sm-block">Formulário de Edição de Categorias</h2>
-	        <form  action="<c:url value='/categories/update' />" method="post">
-          	  <input type="hidden" name=categoryId value="${ category.id }">
+	        <form  action="<c:url value='/category/update' />" method="post">
+          	  <input type="hidden" name="categoryId" value="${ category.id }">
 	        
   			  <div class="form-group">
 			    <label for="categoryTitle">Título</label>
