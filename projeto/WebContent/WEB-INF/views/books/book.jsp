@@ -5,7 +5,7 @@
 	<jsp:body>
  		<div class="col main pt-5 mt-3">
 			<h2 class="display-4 d-none d-sm-block">Informações do Livro</h2>
-			<img class="col-sm-2" src="https://cdn.shopify.com/s/files/1/0155/7645/products/eBook-Algoritmos_large.jpg?v=1484936519">
+			<img class="col-sm-2" src="${ book.coverUrl }">
 			<dl class="pt-3 dl-horizontal">
 			  <dt class="col-sm-9">Título</dt>
 			  <dd class="col-sm-9">${ book.title }</dd>

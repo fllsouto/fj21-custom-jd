@@ -1,12 +1,12 @@
 package br.com.caelum.casadocodigo.controller.form;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import br.com.caelum.casadocodigo.model.Category;
 
 public class CategoryForm {
 	
-	@NotNull(message = "O título não pode ficar em branco")
+	@NotBlank(message = "O título não pode ficar em branco")
 	private String title;
 	private String description;
 	

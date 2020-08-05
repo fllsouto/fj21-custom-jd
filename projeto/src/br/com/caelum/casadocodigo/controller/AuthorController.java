@@ -10,17 +10,23 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.caelum.casadocodigo.controller.form.AuthorForm;
 import br.com.caelum.casadocodigo.dao.AuthorDao;
+import br.com.caelum.casadocodigo.dao.BookDao;
 import br.com.caelum.casadocodigo.model.Author;
+import br.com.caelum.casadocodigo.model.Book;
 
 @Controller
 public class AuthorController {
 	
 	@Autowired
 	private AuthorDao authorDao;
+	
+	@Autowired
+	private BookDao bookDao;
 
 	@RequestMapping("/authors/form")
 	public ModelAndView form() {
@@ -39,9 +45,11 @@ public class AuthorController {
 	@RequestMapping("/authors/{id}")
 	public ModelAndView author(@PathVariable("id") Long authorId) {
 		Author author = authorDao.findById(authorId);
+		List<Book> booksByAuthor = bookDao.findByAuthor(author);
+		
 		ModelAndView mv = new ModelAndView("authors/author");
 		mv.addObject("author", author);
-		mv.addObject("numberOfBooks", 42);
+		mv.addObject("numberOfBooks", booksByAuthor.size());
 		return mv;
 	}
 	
@@ -76,6 +84,10 @@ public class AuthorController {
 		authorDao.save(author);
 		return "redirect:/authors";
 	}
-	
-	
+
+	@RequestMapping("/authors/total")
+	@ResponseBody
+	public String total() {
+		return authorDao.count().toString();
+	}
 }

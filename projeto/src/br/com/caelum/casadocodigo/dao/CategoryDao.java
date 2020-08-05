@@ -30,4 +30,8 @@ public class CategoryDao {
 	public void update(Category category) {
 		manager.merge(category);		
 	}
+
+	public Long count() {
+		return manager.createQuery("select count(c) from Category c", Long.class).getSingleResult();
+	}
 }

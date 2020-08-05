@@ -10,10 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.caelum.casadocodigo.controller.form.CategoryForm;
+import br.com.caelum.casadocodigo.dao.BookDao;
 import br.com.caelum.casadocodigo.dao.CategoryDao;
+import br.com.caelum.casadocodigo.model.Book;
 import br.com.caelum.casadocodigo.model.Category;
 
 @Controller
@@ -21,6 +24,9 @@ public class CategoryController {
 	
 	@Autowired
 	private CategoryDao categoryDao;
+	
+	@Autowired
+	private BookDao bookDao;
 
 	@RequestMapping("/categories/form")
 	public ModelAndView form() {
@@ -39,9 +45,11 @@ public class CategoryController {
 	@RequestMapping("/categories/{id}")
 	public ModelAndView category(@PathVariable("id") Long categoryId) {
 		Category category = categoryDao.findById(categoryId);
+		List<Book> booksByCategory = bookDao.findByCategory(category);
+		
 		ModelAndView mv = new ModelAndView("categories/category");
 		mv.addObject("category", category);
-		mv.addObject("numberOfBooks", 42);
+		mv.addObject("numberOfBooks", booksByCategory.size());
 		return mv;
 	}
 	
@@ -77,5 +85,9 @@ public class CategoryController {
 		return "redirect:/categories";
 	}
 	
-	
+	@RequestMapping("/categories/total")
+	@ResponseBody
+	public String total() {
+		return categoryDao.count().toString();
+	}
 }

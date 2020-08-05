@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.caelum.casadocodigo.controller.form.BookForm;
@@ -84,7 +85,7 @@ public class BookController {
 		bookDao.update(book);
 		return "redirect:/books";
 	}
-	
+
 	@Transactional
 	@RequestMapping("/books/create")
 	public String create(@Valid BookForm form, BindingResult result) {			
@@ -95,5 +96,11 @@ public class BookController {
 		Book book = form.build();
 		bookDao.save(book);
 		return "redirect:/books";
+	}
+
+	@RequestMapping("/books/total")
+	@ResponseBody
+	public String total() {
+		return bookDao.count().toString();
 	}
 }

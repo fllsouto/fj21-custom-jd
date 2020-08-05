@@ -23,7 +23,7 @@ public class Book {
 	private Long pages;
 	private String authorName;
 	private String categoryTitle;
-	private String coverUrl;
+	private String coverUrl = "https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png";
 
 	@Lob
 	private String description;

@@ -18,18 +18,20 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
 			rel="stylesheet">
-		
+
 		<link rel="stylesheet"
 			href=" <c:url value='/resources/css/style.css' /> ">
 		<link rel="stylesheet"
 			href=" <c:url value='/resources/css/custom-style.css' /> ">
+
+		<script type="text/javascript"
+			src=" <c:url value='/resources/js/jquery-3.5.1.js' /> "></script>
 	</head>
 	<body>
 		<nav
 			class="navbar fixed-top navbar-expand-md navbar-dark mb-3 navbar-color">
 			<div class="flex-row d-flex">
-	
-				<a class="navbar-brand" href=" <c:url value='/views/home.jsp' /> " title="Casa do código">Casa do
+				<a class="navbar-brand" href=" <c:url value='/' /> " title="Casa do código">Casa do
 					código</a>
 			</div>
 		</nav>
@@ -42,18 +44,6 @@
 				<!--/col-->
 			</div>	
 		</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script

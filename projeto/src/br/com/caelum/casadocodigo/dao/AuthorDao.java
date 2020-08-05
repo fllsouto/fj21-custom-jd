@@ -30,4 +30,8 @@ public class AuthorDao {
 	public void update(Author author) {
 		manager.merge(author);		
 	}
+
+	public Long count() {
+		return manager.createQuery("select count(a) from Author a", Long.class).getSingleResult();
+	}
 }
